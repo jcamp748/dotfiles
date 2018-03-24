@@ -8,6 +8,8 @@ Plug 'w0rp/ale'
 Plug 'alvan/vim-closetag'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
+Plug 'jiangmiao/auto-pairs'
+Plug 'tpope/vim-surround'
 
 call plug#end()
 " }}}
@@ -15,8 +17,8 @@ call plug#end()
 set shiftwidth=2 tabstop=2 expandtab
 
 "change <Leader> from \ to ,
-let mapleader=","
-let maplocalleader = "\\"
+let g:mapleader=','
+let g:maplocalleader = "\\"
 
 " turn off highlighting
 highlight Special NONE
@@ -33,7 +35,7 @@ match OverLength /\%81v.\+/
 set nowrap
 
 " open a file with all folds closed
-let foldlevelstart=0
+let g:foldlevelstart=0
 
 " set search highlighting options
 set hlsearch incsearch
@@ -45,6 +47,10 @@ augroup filetype_make
 augroup end
 "  }}}
 " Mappings {{{
+"
+" ALE jump to error mappings
+nnoremap <silent> <leader>aj :ALENext<cr>
+nnoremap <silent> <leader>ak :ALEPrevious<cr>
 
 " better window switching
 " add a _ after last <c-w> to make windows minimize on switch
@@ -98,10 +104,12 @@ vmap <s-y> "+y
 " map P to paste from system clipboard
 nnoremap <s-p> "+p
 
+" map <leader>b to run 'npm run build' in shell
+
 "}}}
 " Closetag Plugin Settings {{{
 
-let g:closetag_filenames = "*.html.erb,*.html,*.xhtml,*.phtml"
+let g:closetag_filenames = '*.html.erb,*.html,*.xhtml,*.phtml'
 
 " }}}
 " Vimscript file settings ------------------------------- {{{

@@ -1,6 +1,6 @@
 " vim plugins {{{
 " specify directory for vim plugins
-call plug#begin('~/.local/share/nvim/plugged')
+call plug#begin('~/.vim/plugged')
 
 " plugins go here
 
@@ -10,6 +10,11 @@ Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-surround'
+Plug 'Valloric/YouCompleteMe'
+Plug 'morhetz/gruvbox'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+Plug 'benmills/vimux'
 
 call plug#end()
 " }}}
@@ -23,6 +28,12 @@ let g:maplocalleader = "\\"
 " turn off highlighting
 highlight Special NONE
 set number		"show line numbers
+
+" set up colorscheme
+let g:gruvbox_italic=1
+set termguicolors
+colorscheme gruvbox 
+set background=dark
 
 "set winheight=10
 set winminheight=0
@@ -99,7 +110,7 @@ nnoremap / /\v
 nnoremap <s-l> :redraw! <cr>
 
 " map Y to yank to system clipboard
-vmap <s-y> "+y
+vnoremap <s-y> "+y
 
 " map P to paste from system clipboard
 nnoremap <s-p> "+p
@@ -118,3 +129,12 @@ augroup filetype_vim
   autocmd FileType vim setlocal foldmethod=marker
 augroup end
 "}}}
+" UltiSnips settings ------------------------------- {{{
+let g:UltiSnipsExpandTrigger = '<c-space>'
+let g:UltiSnipsSnippetDirectories = ['/home/jordan/.vim/UltiSnips', 'UltiSnips']
+"}}}
+" vimux settings ------------------------------- {{{
+nnoremap <leader>vl :VimuxRunLastCommand<cr>
+nnoremap <leader>vr :VimuxPromptCommand<cr>
+"}}}
+

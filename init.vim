@@ -65,8 +65,8 @@ nnoremap <silent> <leader>ak :ALEPrevious<cr>
 
 " better window switching
 " add a _ after last <c-w> to make windows minimize on switch
-nnoremap <c-j> <c-w>j<c-w>_
-nnoremap <c-k> <c-w>k<c-w>_
+nnoremap <c-j> <c-w>j<c-w><esc>
+nnoremap <c-k> <c-w>k<c-w><esc>
 nnoremap <c-h> <c-w>h<c-w><esc>
 nnoremap <c-l> <c-w>l<c-w><esc>
 

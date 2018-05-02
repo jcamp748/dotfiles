@@ -15,7 +15,9 @@ Plug 'morhetz/gruvbox'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'benmills/vimux'
-
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
+Plug 'christoomey/vim-tmux-navigator'
 call plug#end()
 " }}}
 " Basic Settings {{{
@@ -65,8 +67,8 @@ nnoremap <silent> <leader>ak :ALEPrevious<cr>
 
 " better window switching
 " add a _ after last <c-w> to make windows minimize on switch
-nnoremap <c-j> <c-w>j<c-w><esc>
-nnoremap <c-k> <c-w>k<c-w><esc>
+nnoremap <c-j> <c-w>j<c-w>_
+nnoremap <c-k> <c-w>k<c-w>_
 nnoremap <c-h> <c-w>h<c-w><esc>
 nnoremap <c-l> <c-w>l<c-w><esc>
 
@@ -117,6 +119,18 @@ nnoremap <s-p> "+p
 
 " map <leader>b to run 'npm run build' in shell
 
+" map v b to highlight a block enclosed by {}
+vnoremap b 0<esc>vt{%
+
+" map <c-n> to go to next line
+inoremap <c-n> <esc>ja
+
+" map cip to find parens in line and change the inside
+nnoremap cip f(a<esc>ci(
+
+" map cib to find brackets in line and change the inside
+nnoremap cib f{a<esc>ci{
+
 "}}}
 " Closetag Plugin Settings {{{
 
@@ -138,3 +152,4 @@ nnoremap <leader>vl :VimuxRunLastCommand<cr>
 nnoremap <leader>vr :VimuxPromptCommand<cr>
 "}}}
 
+tnoremap <Esc> <C-\><C-n>

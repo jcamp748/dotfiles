@@ -11,5 +11,5 @@ windows:
 
       panes:
         - vim
-        -  
+        - yarn test 
         - npm run start

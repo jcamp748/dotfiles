@@ -10,6 +10,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-surround'
+<<<<<<< HEAD
 Plug 'Valloric/YouCompleteMe'
 Plug 'morhetz/gruvbox'
 Plug 'SirVer/ultisnips'
@@ -18,11 +19,19 @@ Plug 'benmills/vimux'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 Plug 'christoomey/vim-tmux-navigator'
+=======
+Plug 'morhetz/gruvbox'
+Plug 'Valloric/YouCompleteMe'
+Plug 'Sirver/ultisnips'
+
+>>>>>>> c8fa254ea15ffef15a839ff65871ea4201f9db7d
 call plug#end()
 " }}}
 " Basic Settings {{{
 set shiftwidth=2 tabstop=2 expandtab
 
+colorscheme gruvbox
+set background=dark
 "change <Leader> from \ to ,
 let g:mapleader=','
 let g:maplocalleader = "\\"
@@ -80,6 +89,9 @@ inoremap <c-u> <esc>viwU<esc>ea
 
 " shortcut for sourcing .vimrc
 :nnoremap <leader>sv :source $MYVIMRC<cr>
+
+" say hello
+:nnoremap <leader>h :echo("hello")
 
 " shortcut for NERDTree
 :nnoremap <leader>t :NERDTreeToggle<cr>
